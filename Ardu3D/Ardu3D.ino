@@ -57,9 +57,9 @@
 #define MODEL_HELLO_WORLD 2  // "HELLO WORLD" model ID.
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-// 3D vertice object used by models
+// 3D vertex object used by models
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-class A3DVertice {
+class A3DVertex {
   
   public:
 
@@ -68,23 +68,23 @@ class A3DVertice {
     int16_t y;
     int16_t z;
 
-    A3DVertice();
-    A3DVertice(int16_t x, int16_t y, int16_t z);
+    A3DVertex();
+    A3DVertex(int16_t x, int16_t y, int16_t z);
 };
 
-A3DVertice::A3DVertice() { }
+A3DVertex::A3DVertex() { }
 
-A3DVertice::A3DVertice(int16_t verticeX, int16_t verticeY, int16_t verticeZ) {
+A3DVertex::A3DVertex(int16_t vertexX, int16_t vertexY, int16_t vertexZ) {
 
-  this->x = verticeX;
-  this->y = verticeY;
-  this->z = verticeZ;
+  this->x = vertexX;
+  this->y = vertexY;
+  this->z = vertexZ;
 }
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-// 2D vertice object used by models
+// 2D vertex object used by models
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
-class A2DVertice {
+class A2DVertex {
   
   public:
 
@@ -92,10 +92,10 @@ class A2DVertice {
     int16_t x;
     int16_t y;
 
-    A2DVertice();
+    A2DVertex();
 };
 
-A2DVertice::A2DVertice() { }
+A2DVertex::A2DVertex() { }
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // Cube model
@@ -114,17 +114,17 @@ class A3DCube {
 
     // Vertices
     uint8_t verticesCount = 8;
-    A2DVertice screenVertices[8];
-    PROGMEM const A3DVertice vertices[8] = {
+    A2DVertex screenVertices[8];
+    A3DVertex vertices[8] = {
 
-      A3DVertice(-50, 50, 50),
-      A3DVertice(50, 50, 50),
-      A3DVertice(50, -50, 50),
-      A3DVertice(-50, -50, 50),
-      A3DVertice(-50, 50, -50),
-      A3DVertice(50, 50, -50),
-      A3DVertice(50, -50, -50),
-      A3DVertice(-50, -50, -50)
+      A3DVertex(-50, 50, 50),
+      A3DVertex(50, 50, 50),
+      A3DVertex(50, -50, 50),
+      A3DVertex(-50, -50, 50),
+      A3DVertex(-50, 50, -50),
+      A3DVertex(50, 50, -50),
+      A3DVertex(50, -50, -50),
+      A3DVertex(-50, -50, -50)
     };
 
     A3DCube(); 
@@ -149,72 +149,72 @@ class A3DHelloWorld {
 
     // Vertices
     uint8_t verticesCount = 44;
-    A2DVertice screenVertices[44];
-    A3DVertice vertices[44] = {
+    A2DVertex screenVertices[44];
+    A3DVertex vertices[44] = {
 
       // H letter
-      A3DVertice(-56, 28, 0),
-      A3DVertice(-56, 4, 0),
-      A3DVertice(-40, 28, 0),
-      A3DVertice(-40, 4, 0),
-      A3DVertice(-56, 16, 0),
-      A3DVertice(-40, 16, 0), 
+      A3DVertex(-56, 28, 0),
+      A3DVertex(-56, 4, 0),
+      A3DVertex(-40, 28, 0),
+      A3DVertex(-40, 4, 0),
+      A3DVertex(-56, 16, 0),
+      A3DVertex(-40, 16, 0), 
 
       // E letter
-      A3DVertice(-32, 28, 0),
-      A3DVertice(-32, 4, 0),
-      A3DVertice(-16, 28, 0),
-      A3DVertice(-32, 16, 0),
-      A3DVertice(-16, 16, 0),
-      A3DVertice(-16, 4, 0),
+      A3DVertex(-32, 28, 0),
+      A3DVertex(-32, 4, 0),
+      A3DVertex(-16, 28, 0),
+      A3DVertex(-32, 16, 0),
+      A3DVertex(-16, 16, 0),
+      A3DVertex(-16, 4, 0),
 
       // First L letter
-      A3DVertice(-8, 28, 0),
-      A3DVertice(-8, 4, 0),
-      A3DVertice(8, 4, 0),
+      A3DVertex(-8, 28, 0),
+      A3DVertex(-8, 4, 0),
+      A3DVertex(8, 4, 0),
 
       // Second L letter
-      A3DVertice(16, 28, 0),
-      A3DVertice(16, 4, 0),
-      A3DVertice(32, 4, 0),
+      A3DVertex(16, 28, 0),
+      A3DVertex(16, 4, 0),
+      A3DVertex(32, 4, 0),
 
       // First O letter
-      A3DVertice(40, 28, 0),
-      A3DVertice(40, 4, 0),
-      A3DVertice(56, 4, 0),
-      A3DVertice(56, 28, 0),
+      A3DVertex(40, 28, 0),
+      A3DVertex(40, 4, 0),
+      A3DVertex(56, 4, 0),
+      A3DVertex(56, 28, 0),
       
       // W letter
-      A3DVertice(-56, -4, 0),
-      A3DVertice(-52, -28, 0),
-      A3DVertice(-48, -16, 0),
-      A3DVertice(-44, -28, 0),
-      A3DVertice(-40, -4, 0),
+      A3DVertex(-56, -4, 0),
+      A3DVertex(-52, -28, 0),
+      A3DVertex(-48, -16, 0),
+      A3DVertex(-44, -28, 0),
+      A3DVertex(-40, -4, 0),
       
       // Second O letter
-      A3DVertice(-32, -4, 0),
-      A3DVertice(-32, -28, 0),
-      A3DVertice(-16, -28, 0),
-      A3DVertice(-16, -4, 0),
+      A3DVertex(-32, -4, 0),
+      A3DVertex(-32, -28, 0),
+      A3DVertex(-16, -28, 0),
+      A3DVertex(-16, -4, 0),
       
       // R letter
-      A3DVertice(-8, -4, 0),
-      A3DVertice(-8, -28, 0),
-      A3DVertice(8, -4, 0),
-      A3DVertice(8, -16, 0),
-      A3DVertice(-4, -16, 0),
-      A3DVertice(8, -28, 0),
+      A3DVertex(-8, -4, 0),
+      A3DVertex(-8, -28, 0),
+      A3DVertex(8, -4, 0),
+      A3DVertex(8, -16, 0),
+      A3DVertex(-4, -16, 0),
+      A3DVertex(8, -28, 0),
       
       // Third L letter
-      A3DVertice(16, -4, 0),
-      A3DVertice(16, -28, 0),
-      A3DVertice(32, -28, 0),
+      A3DVertex(16, -4, 0),
+      A3DVertex(16, -28, 0),
+      A3DVertex(32, -28, 0),
       
       // D letter
-      A3DVertice(40, -4, 0),
-      A3DVertice(40, -28, 0),
-      A3DVertice(56, -5, 0),
-      A3DVertice(56, -27, 0)
+      A3DVertex(40, -4, 0),
+      A3DVertex(40, -28, 0),
+      A3DVertex(56, -5, 0),
+      A3DVertex(56, -27, 0)
     };
 
     A3DHelloWorld();
@@ -315,11 +315,11 @@ void loop() {
 
   int8_t rotCosBy32;  // Cosinus value muliplied by 32 used for rotate the object
   int8_t rotSinBy32;  // Sinus value muliplied by 32 used for rotate the object
-  int16_t newVertX;   // New vertice X value after rotation  
-  int16_t newVertY;   // New vertice Y value after rotation
-  int16_t newVertZ;   // New vertice Z value after rotation
-  int16_t projectedX; // Projected vertice X value in the projection surface
-  int16_t projectedY; // Projected vertice Y value in the projection surface
+  int16_t newVertX;   // New vertex X value after rotation  
+  int16_t newVertY;   // New vertex Y value after rotation
+  int16_t newVertZ;   // New vertex Z value after rotation
+  int16_t projectedX; // Projected vertex X value in the projection surface
+  int16_t projectedY; // Projected vertex Y value in the projection surface
   
   // Clear display
   arduboy.clear();
@@ -351,8 +351,8 @@ void loop() {
     // Update model position on the world
     newVertZ += model.z;
 
-    // Projection of the vertice on a 2D surface (converts 3D coordinates into 2D coordinates)
-    // A visible vertice will be between -64 and 64.
+    // Projection of the vertex on a 2D surface (converts 3D coordinates into 2D coordinates)
+    // A visible vertex will be between -64 and 64 values.
     projectedX = (newVertX * FRONT_BY_64) / newVertZ;
     projectedY = (newVertY * FRONT_BY_64) / newVertZ;
 
